@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @use.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @use.password %>
+</p>
+
+<p>
+  <strong>Books:</strong>
+  <% @use.books.each do |book|  %>
+      <tr>
+      <br>
+      <td><strong>Title:</strong> <%= book.title %></td>,
+	  <td><strong>Author:</strong> <%= book.last_name %>, <%= book.first_name %></td>
+	  </tr>
+        <% end %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@use) %> |
+<%= link_to 'Back', users_path %>
